@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend', monospace;
+    scroll-behavior: smooth;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    background-color: #2e2e2e;
+    background-image: url("https://source.unsplash.com/1600x900/?landscape");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.weather-card {
+    left: 50%;
+    background: linear-gradient(#202020b9, #292929a6, #363636a2);
+    color: #ffffff;
+    padding: 1em;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px 0 #000000;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input.search-bar {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 0.5em;
+    margin-right: 0.5em;
+    font-size: 1em;
+    font-family: 'Lexend', monospace;
+    color: #ffffff;
+    background: #cccccc2b;
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #cccccc2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+.date {
+    font-size: 15px;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    max-height: 40px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    bottom: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
+    font-size: 70%;
+    color: #ffffff;
+    background: #222222e1;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer a:hover {
+    color: #b9d5ff;
+    transition: 0.5s;
+}
