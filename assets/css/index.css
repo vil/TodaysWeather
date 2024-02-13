@@ -25,13 +25,15 @@ body {
     color: #ffffff;
     padding: 1em;
     border-radius: 10px;
-    width: 300px;
-    height: 300px;
+    max-height: 300px;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0 0 10px 0 #000000;
+}
+
+.city {
+    padding: 5px;
 }
 
 .search {
@@ -72,6 +74,8 @@ button:hover {
 .flex {
     display: flex;
     align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .description {
