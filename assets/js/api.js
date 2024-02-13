@@ -5,7 +5,7 @@ let d = n.getDate();
 document.getElementById("date").innerHTML = "Current date: " + d + "/" + m + "/" + y;
 
 let weather = {
-    apiKey: "fa7b439db822c60b3f95528568a70b0b",
+    apiKey: "fa7b439db822c60b3f95528568a70b0b", // free api key, poggers.
     fetchWeather: function (city) {
         fetch(
             "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -16,23 +16,25 @@ let weather = {
         )
             .then((response) => {
                 if (!response.ok) {
-                    alert("Error! No weather found.");
-                    throw new Error("Error! No weather found.");
+                    alert("No weather data found!");
+                    throw new Error("No weather data found");
                 }
                 return response.json();
             })
             .then((data) => this.displayWeather(data));
+
+        console.log(response.json())
     },
     displayWeather: function (data) {
         const { name } = data;
         const { icon, description } = data.weather[0];
-        const { temp, humidity } = data.main;
+        const { temp, humidity, feels_like } = data.main;
         const { speed } = data.wind;
         document.querySelector(".city").innerText = "Today's weather in " + name;
         document.querySelector(".icon").src =
             "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
+        document.querySelector(".temp").innerText = temp + "°C, feels like " + feels_like + "°C";
         document.querySelector(".humidity").innerText =
             "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText =
@@ -45,6 +47,8 @@ let weather = {
         this.fetchWeather(document.querySelector(".search-bar").value);
     },
 };
+
+console.log(weather.fetchWeather)
 
 // If user clicks on search button, run search function.
 document.querySelector(".search button").addEventListener("click", function () {
@@ -71,8 +75,8 @@ if (navigator.geolocation) {
             weather.apiKey
         ).then((response) => {
             if (!response.ok) {
-                alert("Error! No weather found.");
-                throw new Error("Error! No weather found.");
+                alert("No weather data found!");
+                throw new Error("No weather data found");                
             }
             return response.json();
         }).then((data) => {
