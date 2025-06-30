@@ -21,7 +21,7 @@
   "homepage": "https://github.com/vil/TodaysWeather#readme",
   "dependencies": {
     "axios": "^1.7.2",
-    "dotenv": "^16.4.5",
+    "dotenv": "^17.0.0",
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security"
